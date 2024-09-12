@@ -30,12 +30,17 @@ jobs:
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             BUILD_ONLY: true
+        - name: XLSX-to-CSV
+          uses: JoeSiu/xlsx-to-csv-action@1.0.0
+          with:
+            inputFile: cards.xslx
+            outputFile: cards.csv
         - name: Compile cards
           uses: xu-cheng/latex-action@v3
           with:
             root_file: main.tex
         - name: Move file
-          run: cp main.tex public/fevronia-cards.pdf
+          run: mv main.pdf public/fevronia-cards.pdf
         - name: Upload artefact
           uses: actions/upload-pages-artifact@v3.0.1
           with:
