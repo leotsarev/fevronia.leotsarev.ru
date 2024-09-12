@@ -8,6 +8,8 @@
 \usepackage[a4paper,margin=0.5in,lmargin=1in,landscape]{geometry}
 
 \begin{document}
+\exhyphenpenalty 10000
+\hyphenpenalty 10000
 \DTLsetseparator{,}
 \DTLloaddb{cards}{cards.csv}
 \newtcard{card}{%
@@ -30,7 +32,7 @@
     
 	\linenode[draw,line width=0.025in,rounded corners=0.1in]{-1.15,1.4}{1.15,1.65}{\thetype}
 
-	\pagenode[draw,line width=0.02in]{-1.1in,-0.3in}{1.1in,-1.2in}{\thecardtext\vskip0pt}%
+	\pagenode[draw,line width=0.02in]{-1.1in,-0.3in}{1.1in,-1.2in}{\hfil \vfil Возбуждает ли ИМЯ \newline \thecardtext ? \vfil \hfil}%
     
     \ifthenelse{\equal{\therandomdir}{L}}
     {\linenode[draw,line width=0.025in,rounded corners=0.1in]{-1.1,-1.3in}{0,-1.55}{\Repeat{\therandomcount}{\textleftarrow}}}{}
