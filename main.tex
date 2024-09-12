@@ -28,16 +28,16 @@
     }
     {%
     
-	\linenode[draw,line width=0.025in,rounded corners=0.1in]{-1.15,1.4}{1.15,1.65}{\thetype};
+	\linenode[draw,line width=0.025in,rounded corners=0.1in]{-1.15,1.4}{1.15,1.65}{\thetype}
 
 	\pagenode[draw,line width=0.02in]{-1.1in,-0.3in}{1.1in,-1.2in}{\thecardtext\vskip0pt}%
     
     \ifthenelse{\equal{\therandomdir}{L}}
-    {\linenode[draw,line width=0.025in,rounded corners=0.1in]{-1.1,-1.3in}{0,-1.55}{\Repeat{\therandomcount}{\textleftarrow}};}{};
+    {\linenode[draw,line width=0.025in,rounded corners=0.1in]{-1.1,-1.3in}{0,-1.55}{\Repeat{\therandomcount}{\textleftarrow}}}{}
 
     \ifthenelse{\equal{\therandomdir}{R}}
-        {\linenode[draw,line width=0.025in,rounded corners=0.1in]{0,-1.3in}{1.1,-1.55}{\Repeat{\therandomcount}{\textrightarrow}};}
-    {};
+        {\linenode[draw,line width=0.025in,rounded corners=0.1in]{0,-1.3in}{1.1,-1.55}{\Repeat{\therandomcount}{\textrightarrow}}}
+    {}
     
 }
 
