@@ -33,7 +33,7 @@ jobs:
         - name: Compile cards
           uses: xu-cheng/latex-action@v3
           with:
-            root_file: /cards/main.tex
+            root_file: main.tex
             working_directory: /cards
         - name: Move file
           run: mv /cards/main.pdf /public/fevronia-cards.pdf
