@@ -1,0 +1,76 @@
+\NeedsTeXFormat{LaTeX2e}[2010/01/01]
+\ProvidesPackage{tcardz}[2019/06/07]
+
+% Load needed packages
+\RequirePackage{tikz}
+\usetikzlibrary{calc}
+
+
+% Define main tcard environment
+\newenvironment{tcard}[1]{%
+	% Check that this card style has been defined
+	% Store tcard name
+	\newcommand\thistcard{#1}%
+	% Define tcard environment functions
+	% \newtcardvar{variable name}{default value}
+	\newcommand\newtcardvar[2]{%
+		\newadvtcardvar{##1}{##2}{}{}%
+	}%
+	% \newadvtcardvar{variable name}{default value}{prepend}{append}
+	\newcommand\newadvtcardvar[4]{%
+		\expandafter\newcommand\csname ##1\endcsname[1]{%
+			\expandafter\renewcommand\csname the##1\endcsname{####1}%
+		}%
+		\expandafter\newcommand\csname add##1\endcsname[1]{%
+			\edef\tmpvar{\theability}%
+			\expandafter\renewcommand\csname the##1\endcsname{\tmpvar##3####1##4}%
+		}%
+		\expandafter\newcommand\csname the##1\endcsname{##2}%
+	}%
+	%
+	% Begin tikz drawing
+	\begin{tikzpicture}[x=1in,y=1in,every node/.style={inner sep=0,outer sep=0}]%
+	% Load card initialization
+	\inittcard{\thistcard}%
+}{%
+	\printtcard{\thistcard}%
+	\end{tikzpicture}%
+}% Finish defining tcard environment
+
+
+% Define command to create a new card template
+\newcommand\newtcard[3]{%
+	\expandafter\newcommand\csname tcardinit#1\endcsname{#2}%
+	\expandafter\newcommand\csname tcarddisp#1\endcsname{#3}%
+}%
+
+% Define command to create a new card template based on an existing template
+\newcommand\expandtcard[4]{%
+	\expandafter\newcommand\csname tcardinit#1\endcsname{\inittcard{#2}#3}%
+	\expandafter\newcommand\csname tcarddisp#1\endcsname{\printtcard{#2}#4}%
+}%
+
+% Commands to use those card templates
+\newcommand\inittcard[1]{\csname tcardinit#1\endcsname}%
+\newcommand\printtcard[1]{\csname tcarddisp#1\endcsname}%
+
+% Draw border around card. Specify border width and corner rounding radius.
+% Optional argument allows further customization by passing its contents through to the \fill command
+\newcommand\drawborder[3][]{%
+	\fill[even odd rule,#1] (-0.5*\cardwidth,-0.5*\cardheight) rectangle (0.5*\cardwidth,0.5*\cardheight)%
+		(-0.5*\cardwidth+#2,-0.5*\cardheight+#2) [rounded corners=#3] -- (0.5*\cardwidth-#2,-0.5*\cardheight+#2) -- %
+		(0.5*\cardwidth-#2,0.5*\cardheight-#2)-- (-0.5*\cardwidth+#2,0.5*\cardheight-#2) -- cycle;%
+}%
+
+
+\newcommand\pagenode[4][]{%
+	\path[#1] let \p{A} = (#2), \p{B} = (#3), \p{dims} = ({abs(\x{B}-\x{A})},{abs(\y{B}-\y{A})}) in (\p{A}) rectangle (\p{B}) node[midway,text depth=0] {\begin{minipage}[b][\y{dims}][t]{\x{dims}}#4\end{minipage}};
+}%
+
+\newcommand\linenode[4][]{%
+	\path[#1] let \p{A} = (#2), \p{B} = (#3) in (\p{A}) rectangle (\p{B}) node[midway,text depth=0] {#4};
+}%
+
+\newcommand\ntimes[2]{\ifnum##2>0##1\ntimes{##1}{\numexpr##2-1\relax}\fi}%
+
+\endinput
