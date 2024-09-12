@@ -35,7 +35,7 @@ jobs:
           with:
             root_file: main.tex
         - name: Move file
-          run: mv main.pdf  $GITHUB_WORKSPACE/public/fevronia-cards.pdf
+          run: cp main.pdf  $GITHUB_WORKSPACE/public/fevronia-cards.pdf
         - name: Upload artefact
           uses: actions/upload-pages-artifact@v3.0.1
           with:
