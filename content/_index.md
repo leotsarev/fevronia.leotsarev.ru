@@ -53,5 +53,10 @@ title="Возбуждает ли Февронию"
 
 Если партнер ответил про вас на какой-то вопрос, на который вам было некомфортно, что он ответил, вы можете сделать тоже самое — объявите «НЕ БУДУ ПОДТВЕРЖДАТЬ/ОПРОВЕРГАТЬ» и выпейте. Но знайте, что это совсем уж слабый ход.
 
+### Credits
 
-
+Автор игры: {{ telegram(user="leotsarev") }} (<https://leotsarev.ru>)
+<br />
+С карточками помогали Атана и Шико.
+<br />
+Исходники на <a href="https://github.com/leotsarev/fevronia.leotsarev.ru"><img src="github-mark.svg" width=13 height=13 style="margin-right:0.2em">Github</a>.
