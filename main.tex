@@ -49,11 +49,9 @@
 
 \DTLforeach*
 {cards}% database label
-{\csvtype=type,\csvcardtext=cardtext,\csvdirection=direction,\csvcount=count,
-\csvpretext=pretext}% assignment
+{\csvtype=type,\csvcardtext=cardtext,\csvdirection=direction,\csvcount=count}% assignment
 {% Stuff to do at each iteration:
   \begin{tcard}{fev}%
-	\pretext{\csvpretext}%
     \cardtext{\csvcardtext}%
 	\type{\csvtype}%
     \randomdir{\csvdirection}
