@@ -32,9 +32,11 @@
     
 	\linenode[draw,line width=0.025in,rounded corners=0.1in]{-1.15,1.4}{1.15,1.65}{\thetype}
 
-    \pagenode[draw]{-1.1,0.1in}{1.1in,-1.2in}{
-    \vfil \centering \emph{
-    Возбуждают ли ИМЯ мысли/фантазии} \textbf{\thecardtext}? \vfil}%
+    \pagenode[draw]{-1.1,0.1in}{1.1in,-0.4in}{
+        \vfil \centering \emph{
+        Возбуждает ли ИМЯ мысли/фантазии о....}
+        }
+            \pagenode[draw,line width=0.02in]{-1.1in,-0.5in}{1.1in,-1.2in}{\hfil \vfil \centering \textbf{\thecardtext}? \vfil \hfil}%
     
     \ifthenelse{\equal{\therandomdir}{L}}
     {\linenode[draw,line width=0.025in,rounded corners=0.1in]{-1.1,-1.3in}{0,-1.55}{\Repeat{\therandomcount}{\textleftarrow}}}{}
@@ -52,7 +54,7 @@
 {\csvtype=type,\csvcardtext=cardtext,\csvdirection=direction,\csvcount=count}% assignment
 {% Stuff to do at each iteration:
   \begin{tcard}{fev}%
-    \cardtext{\csvcardtext}%
+	\cardtext{\csvcardtext}%
 	\type{\csvtype}%
     \randomdir{\csvdirection}
     \randomcount{\csvcount}
