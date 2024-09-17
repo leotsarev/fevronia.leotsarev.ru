@@ -32,16 +32,18 @@
     
 	\linenode[draw,line width=0.025in,rounded corners=0.1in]{-1.15,1.4}{1.15,1.65}{\thetype}
 
-    \pagenode[draw]{-1.1,0.1in}{1.1in,-1.2in}{
+    \pagenode[draw]{-1.1,0.05in}{1.1in,-1.15in}{
     \emph{
     Возбуждают ли ИМЯ мысли (фантазии)} \textbf{\thecardtext}? \vfil}%
     
     \ifthenelse{\equal{\therandomdir}{L}}
-    {\linenode[draw,line width=0.025in,rounded corners=0.1in]{-1.1,-1.3in}{0,-1.55}{\Repeat{\therandomcount}{\textleftarrow}}}{}
+    {\linenode[draw,line width=0.025in,rounded corners=0.1in]{-1.1,-1.25in}{0,-1.5}{\Repeat{\therandomcount}{\textleftarrow}}}{}
 
     \ifthenelse{\equal{\therandomdir}{R}}
-        {\linenode[draw,line width=0.025in,rounded corners=0.1in]{0,-1.3in}{1.1,-1.55}{\Repeat{\therandomcount}{\textrightarrow}}}
+        {\linenode[draw,line width=0.025in,rounded corners=0.1in]{0,-1.25in}{1.1,-1.5}{\Repeat{\therandomcount}{\textrightarrow}}}
     {}
+
+    \linenode[]{-1.1,-1.55in}{1.1,-1.65}{{\tiny fevronia.leotsarev.ru}}
     
 }
 
