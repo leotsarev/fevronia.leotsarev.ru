@@ -64,7 +64,7 @@
 
 
 \newcommand\pagenode[4][]{%
-	\path[#1] let \p{A} = (#2), \p{B} = (#3), \p{dims} = ({abs(\x{B}-\x{A})},{abs(\y{B}-\y{A})}) in (\p{A}) rectangle (\p{B}) node[midway,text depth=0] {\begin{minipage}[b][\y{dims}][t]{\x{dims}}#4\end{minipage}};
+	\path[#1] let \p{A} = (#2), \p{B} = (#3), \p{dims} = ({abs(\x{B}-\x{A}-1em)},{abs(\y{B}-\y{A}+1em)}) in (\p{A}) rectangle (\p{B}) node[midway,text depth=0] {\begin{minipage}[b][\y{dims}][t]{\x{dims}} #4\end{minipage}};
 }%
 
 \newcommand\linenode[4][]{%
