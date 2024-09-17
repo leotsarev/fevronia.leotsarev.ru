@@ -34,6 +34,8 @@ jobs:
           uses: xu-cheng/latex-action@v3
           with:
             root_file: main.tex
+            latexmk_use_xelatex: true
+            texlive_version: 2024
         - name: Move file
           run: sudo cp main.pdf  $GITHUB_WORKSPACE/public/fevronia-cards.pdf
         - name: Upload artefact
