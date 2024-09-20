@@ -36,7 +36,7 @@
     
 	\linenode[draw,line width=0.025in,rounded corners=0.1in]{-1.15,1.4}{1.15,1.65}{\thetype}
 
-    \pagenode[draw]{-1.1,0.05in}{1.1in,-1.15in}{\raggedright \emph{Возбуждают ли ИМЯ мысли (фантазии)} \textbf{\thecardtext}? }%
+    \pagenode[draw]{-1.1,0.05in}{1.1in,-1.15in}{\raggedright \ifthenelse{\equal{\therandomdir}{EVENT}}{\thecardtext}{\emph{Возбуждают ли ИМЯ мысли (фантазии)} {\textbf{\thecardtext}}?} }%
     
     \ifthenelse{\equal{\therandomdir}{L}}
     {\linenode[draw,line width=0.025in,rounded corners=0.1in]{-1.1,-1.25in}{0,-1.5}{\Repeat{\therandomcount}{\textleftarrow}}}{}
@@ -45,16 +45,21 @@
         {\linenode[draw,line width=0.025in,rounded corners=0.1in]{0,-1.25in}{1.1,-1.5}{\Repeat{\therandomcount}{\textrightarrow}}}
     {}
 
+    \ifthenelse{\equal{\therandomdir}{EVENT}}
+        {\linenode[draw,line width=0.025in,rounded corners=0.1in]{-1.1,-1.25in}{1.1,-1.5} {Событие}}
+    {}
+
     \linenode[]{-1.1,-1.55in}{1.1,-1.65}{{\small fevronia.leotsarev.ru}}
     
 }
 
 \expandtcard{spec}{card}{%
 	\newtcardvar{cardtext}{ Все пересаживаются}%
+    \newtcardvar{type}{ЛАЙТ}%
     }
     {%
     
-	\linenode[draw,line width=0.025in,rounded corners=0.1in]{-1.15,1.4}{1.15,1.65}{ХАРД — СОБЫТИЕ}
+	\linenode[draw,line width=0.025in,rounded corners=0.1in]{-1.15,1.4}{1.15,1.65}{\thetype — СОБЫТИЕ}
 
     \pagenode[draw]{-1.1,0.05in}{1.1in,-1.15in}{
     \thecardtext }%
@@ -74,8 +79,14 @@
     \randomcount{\csvcount}
 \end{tcard}
 }
-\Repeat{3}{\begin{tcard}{spec}%
+\Repeat{2}{\begin{tcard}{spec}%
     \cardtext{\textbf{Все пересаживаются}. После этого потяните еще карту?}%
+    \type{ЛАЙТ}
+\end{tcard}
+}
+\Repeat{2}{\begin{tcard}{spec}%
+    \cardtext{\textbf{Все пересаживаются}. После этого потяните еще карту?}%
+    \type{{ХАРД }}
 \end{tcard}
 }
 
