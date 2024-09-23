@@ -53,21 +53,6 @@
     
 }
 
-\expandtcard{spec}{card}{%
-	\newtcardvar{cardtext}{ Все пересаживаются}%
-    \newtcardvar{type}{ЛАЙТ}%
-    }
-    {%
-    
-	\linenode[draw,line width=0.025in,rounded corners=0.1in]{-1.15,1.4}{1.15,1.65}{\thetype — СОБЫТИЕ}
-
-    \pagenode[draw]{-1.1,0.05in}{1.1in,-1.15in}{
-    \thecardtext }%
-    
-    \linenode[]{-1.1,-1.55in}{1.1,-1.65}{{\small fevronia.leotsarev.ru}}
-    
-}
-
 \DTLforeach*
 {cards}% database label
 {\csvtype=type,\csvcardtext=cardtext,\csvdirection=direction,\csvcount=count}% assignment
