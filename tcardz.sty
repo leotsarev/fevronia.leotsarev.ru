@@ -71,6 +71,4 @@
 	\path[#1] let \p{A} = (#2), \p{B} = (#3) in (\p{A}) rectangle (\p{B}) node[midway,text depth=0] {#4};
 }%
 
-\newcommand\ntimes[2]{\ifnum##2>0##1\ntimes{##1}{\numexpr##2-1\relax}\fi}%
-
 \endinput
