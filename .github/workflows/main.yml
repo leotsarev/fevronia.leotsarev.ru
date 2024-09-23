@@ -45,7 +45,7 @@ jobs:
             latexmk_use_xelatex: true
             texlive_version: 2024
         - name: Move file
-          run: sudo cp main.pdf  $GITHUB_WORKSPACE/public/fevronia-separate-cards.pdf
+          run: sudo cp sepcards.pdf  $GITHUB_WORKSPACE/public/fevronia-separate-cards.pdf
         - name: Upload artefact
           uses: actions/upload-pages-artifact@v3.0.1
           with:
