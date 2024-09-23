@@ -34,8 +34,8 @@ jobs:
           uses: xu-cheng/latex-action@v3
           with:
             root_file: |
-              tex/main.tex
-              tex/sepcards.tex
+              main.tex
+              sepcards.tex
             working_directory: tex
             latexmk_use_xelatex: true
             texlive_version: 2024
