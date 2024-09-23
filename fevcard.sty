@@ -2,3 +2,30 @@
 \ProvidesPackage{fevcard}[2024/09/23]
 
 \RequirePackage{tcardz}
+
+\expandtcard{fev}{card}{%
+	\newtcardvar{cardtext}{Трогать женскую грудь}%
+	\newtcardvar{type}{ЛАЙТ}%
+    \newtcardvar{randomdir}{R}
+    \newtcardvar{randomcount}{3}
+    }
+    {%
+    
+	\linenode[draw,line width=0.025in,rounded corners=0.1in]{-1.1,1.35}{1.1,1.6}{\thetype}
+
+    \pagenode[draw]{-1.1,0.05in}{1.1in,-1.1in}{\raggedright \ifthenelse{\equal{\therandomdir}{EVENT}}{{\textbf{\thecardtext}}}{\emph{Возбуждают ли ИМЯ фантазии} {\textbf{\thecardtext}}?} }%
+    
+    \ifthenelse{\equal{\therandomdir}{L}}
+    {\linenode[draw,line width=0.025in,rounded corners=0.1in]{-1.1,-1.22in}{0,-1.47}{\Repeat{\therandomcount}{\textleftarrow}}}{}
+
+    \ifthenelse{\equal{\therandomdir}{R}}
+        {\linenode[draw,line width=0.025in,rounded corners=0.1in]{0,-1.22in}{1.1,-1.47}{\Repeat{\therandomcount}{\textrightarrow}}}
+    {}
+
+    \ifthenelse{\equal{\therandomdir}{EVENT}}
+        {\linenode[draw,line width=0.025in,rounded corners=0.1in]{-1.1,-1.22in}{1.1,-1.47} {Событие}}
+    {}
+
+    \linenode[]{-1.1,-1.52in}{1.1,-1.62}{{\small fevronia.leotsarev.ru}}
+    
+}
