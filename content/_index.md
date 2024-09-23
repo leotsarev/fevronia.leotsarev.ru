@@ -27,7 +27,9 @@ title="Возбуждает ли Февронию"
 1. Смешать их все вместе.
 1. Для опытных игроков в настольные игры: сделайте две колоды, в каждой из которых ¼ ХАРД + ¾ ЛАЙТ, ¼ ЛАЙТ + ¾ ХАРД и положите первую на вторую.
 
-<img src="pdf-download-icon.svg" width=13 height=13 style="margin-right:0.2em">[Скачать карточки](fevronia-cards.pdf)
+<img src="pdf-download-icon.svg" width=13 height=13 style="margin-right:0.2em">[Скачать карточки](fevronia-cards.pdf) (удобнее для печати дома) <br/> 
+<img src="pdf-download-icon.svg" width=13 height=13 style="margin-right:0.2em">[Скачать карточки](fevronia-separate-cards.pdf) (каждая карточка на отдельной странице, может быть удобнее типографии)
+
 
 
 ### Основная версия
