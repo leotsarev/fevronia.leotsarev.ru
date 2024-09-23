@@ -1,0 +1,32 @@
+\documentclass{article}
+
+\usepackage[TU]{fontenc}
+\usepackage[english, russian]{babel}
+\usepackage{fevcard}
+\usepackage{xifthen}
+\usepackage{datatool}
+\usepackage[paperheight=3.5in,paperwidth=2.5in,margin=0pt]{geometry}
+\setlength\parindent{0pt}
+\usepackage{fontspec}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{libertine}
+
+\begin{document}
+\exhyphenpenalty 10000
+\hyphenpenalty 10000
+\DTLsetseparator{,}
+\DTLloaddb{cards}{cards.csv}
+
+\DTLforeach*
+{cards}% database label
+{\csvtype=type,\csvcardtext=cardtext,\csvdirection=direction,\csvcount=count}% assignment
+{% Stuff to do at each iteration:
+  \begin{tcard}{fev}%
+    \cardtext{\csvcardtext}%
+	\type{\csvtype}%
+    \randomdir{\csvdirection}
+    \randomcount{\csvcount}
+\end{tcard}
+}
+
+\end{document}

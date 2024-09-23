@@ -38,6 +38,14 @@ jobs:
             texlive_version: 2024
         - name: Move file
           run: sudo cp main.pdf  $GITHUB_WORKSPACE/public/fevronia-cards.pdf
+        - name: Compile cards
+          uses: xu-cheng/latex-action@v3
+          with:
+            root_file: tex/sepcards.tex
+            latexmk_use_xelatex: true
+            texlive_version: 2024
+        - name: Move file
+          run: sudo cp main.pdf  $GITHUB_WORKSPACE/public/fevronia-separate-cards.pdf
         - name: Upload artefact
           uses: actions/upload-pages-artifact@v3.0.1
           with:
