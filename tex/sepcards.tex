@@ -17,11 +17,33 @@
 \DTLsetseparator{,}
 \DTLloaddb{cards}{../cards.csv}
 
+\newcounter{countnum}
+\setcounter{countnum}{0}
+
 \DTLforeach*
 {cards}% database label
-{\csvtype=type,\csvcardtext=cardtext,\csvdirection=direction,\csvcount=count}% assignment
-{% Stuff to do at each iteration:
-  \begin{tcard}{fev}%
+{\csvtype=type,\csvcardtext=cardtext,\csvspec=spec}
+{
+  \ifthenelse{\equal{\csvspec}{EVENT}}
+  %это событие
+  {\def\csvdirection{EVENT}}
+  {% Определяем направление (L/R) по очереди
+    \DTLiffirstrow{\def\csvdirection{R}}{% 
+    \DTLifoddrow{\def\csvdirection{R}}{\def\csvdirection{L}}%
+  }
+  }
+  % Определяем число (1/2/3) по очереди
+  \stepcounter{countnum}%
+  \ifnum\value{countnum}=1
+    \def\csvcount{1}%
+  \else\ifnum\value{countnum}=2
+    \def\csvcount{2}%
+  \else
+    \def\csvcount{3}%
+    \setcounter{countnum}{0} % Сбрасываем счетчик после 3
+  \fi\fi
+  \begin
+  {tcard}{fev}%
     \cardtext{\csvcardtext}%
 	\type{\csvtype}%
     \randomdir{\csvdirection}
