@@ -60,9 +60,8 @@ title="Возбуждает ли Февронию"
 
 ### Credits
 
-Автор игры: {{ telegram(user="leotsarev") }} (<https://leotsarev.ru>)
+Автор игры: {{ telegram(user="leotsarev") }} (<https://leotsarev.ru>) с помощью Атаны.
 <br />
-С карточками помогали Атана и Шико. 
-<br /> Ценный фидбек и бета-тестинг: Крошка&nbsp;Ру.
+Идеи карточек, фидбек, бета-тестинг: Айка, Аронов, Крошка Ру, Шико. 
 <br />
 Исходники на <a href="https://github.com/leotsarev/fevronia.leotsarev.ru"><img src="github-mark.svg" width=13 height=13 style="margin-right:0.2em">Github</a>.
