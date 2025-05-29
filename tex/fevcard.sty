@@ -7,22 +7,45 @@
 	\newtcardvar{cardtext}{Трогать женскую грудь}%
 	\newtcardvar{type}{ЛАЙТ}%
     \newtcardvar{randomdir}{R}
-    \newtcardvar{randomcount}{3}
     }
     {%
+
+    \stepcounter{countnum}%
+    \ifnum\value{countnum}=1
+    \def\csvcount{1}%
+  \else\ifnum\value{countnum}=2
+    \def\csvcount{2}%
+  \else
+    \def\csvcount{3}%
+    \setcounter{countnum}{0} % Сбрасываем счетчик после 3
+  \fi\fi
+
+  \ifthenelse{\not\equal{\therandomdir}{EVENT}}
+  {
+  \stepcounter{countdir}%
+    \ifnum\value{countdir}=1
+    \def\randomdir{L}%
+  \else
+    \def\randomdir{R}%
+    \setcounter{countdir}{0} % Сбрасываем счетчик после 2
+  \fi
+  }
+  {
+    \def\randomdir{EVENT}%
+  }
     
 	\linenode[draw,line width=0.025in,rounded corners=0.1in]{-1.1,1.35}{1.1,1.6}{\thetype}
 
-    \pagenode[draw]{-1.1,0.05in}{1.1in,-1.1in}{\raggedright \ifthenelse{\equal{\therandomdir}{EVENT}}{{\textbf{\thecardtext}}}{\emph{Возбуждают ли ИМЯ фантазии} {\textbf{\thecardtext}}?} }%
+    \pagenode[draw]{-1.1,0.05in}{1.1in,-1.1in}{\raggedright \ifthenelse{\equal{\randomdir}{EVENT}}{{\textbf{\thecardtext}}}{\emph{Возбуждают ли ИМЯ фантазии} {\textbf{\thecardtext}}?} }%
     
-    \ifthenelse{\equal{\therandomdir}{L}}
-    {\linenode[draw,line width=0.025in,rounded corners=0.1in]{-1.1,-1.22in}{0,-1.47}{\Repeat{\therandomcount}{\textleftarrow}}}{}
+    \ifthenelse{\equal{\randomdir}{L}}
+    {\linenode[draw,line width=0.025in,rounded corners=0.1in]{-1.1,-1.22in}{0,-1.47}{\Repeat{\csvcount}{\textleftarrow}}}{}
 
-    \ifthenelse{\equal{\therandomdir}{R}}
-        {\linenode[draw,line width=0.025in,rounded corners=0.1in]{0,-1.22in}{1.1,-1.47}{\Repeat{\therandomcount}{\textrightarrow}}}
+    \ifthenelse{\equal{\randomdir}{R}}
+        {\linenode[draw,line width=0.025in,rounded corners=0.1in]{0,-1.22in}{1.1,-1.47}{\Repeat{\csvcount}{\textrightarrow}}}
     
 
-    \ifthenelse{\equal{\therandomdir}{EVENT}}
+    \ifthenelse{\equal{\randomdir}{EVENT}}
         {\linenode[draw,line width=0.025in,rounded corners=0.1in]{-1.1,-1.22in}{1.1,-1.47} {Событие}}
     {}
 
