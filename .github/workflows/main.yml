@@ -40,12 +40,11 @@ jobs:
             working_directory: tex
             latexmk_use_xelatex: true
             texlive_version: 2024
-        - name: Move file
-          run: sudo cp tex/main.pdf  $GITHUB_WORKSPACE/public/fevronia-cards.pdf
-        - name: Move file
-          run: sudo cp tex/sepcards.pdf  $GITHUB_WORKSPACE/public/fevronia-separate-cards.pdf
-        - name: Move file
-          run: sudo cp tex/never-a4.pdf  $GITHUB_WORKSPACE/public/never-a4-cards.pdf
+        - name: Move files
+          run: |
+            sudo cp tex/main.pdf $GITHUB_WORKSPACE/public/fevronia-cards.pdf
+            sudo cp tex/sepcards.pdf $GITHUB_WORKSPACE/public/fevronia-separate-cards.pdf
+            sudo cp tex/never-a4.pdf $GITHUB_WORKSPACE/public/never-a4-cards.pdf
         - name: Upload artefact
           uses: actions/upload-pages-artifact@v3.0.1
           with:
