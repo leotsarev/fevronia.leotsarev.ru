@@ -1,0 +1,31 @@
+\documentclass{article}
+
+\usepackage[TU]{fontenc}
+\usepackage[english, russian]{babel}
+\usepackage{fevcard}
+\usepackage{xifthen}
+\usepackage{datatool}
+\usepackage[a4paper,margin=0.4in]{geometry}
+\setlength\parindent{0pt}
+\usepackage{fontspec}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{libertine}
+
+\begin{document}
+\exhyphenpenalty 10000
+\hyphenpenalty 10000
+\DTLsetseparator{,}
+\DTLloaddb{cards}{../cards.csv}
+
+\DTLforeach*
+{cards}% database label
+{\csvtype=type,\csvcardtext=cardtext,\csvspec=spec}
+{
+ \ifthenelse{\not\equal{\csvspec}{SKIP}}{
+  \begin{tcard}{nevercard}%
+    \cardtext{\csvspec}%
+	\type{\csvtype}%
+\end{tcard}
+}
+{}
+}\end{document} %не добавляй пробелов внутри цикла и после него
