@@ -20,12 +20,9 @@
 \DTLforeach*
 {cards}% database label
 {\csvtype=type,\csvcardtext=cardtext,\csvspec=spec}
-{
- \ifthenelse{\not\equal{\csvspec}{SKIP} \AND \not\equal{\csvspec}{}}{
+{\ifthenelse{\not\equal{\csvspec}{SKIP} \AND \not\equal{\csvspec}{}}{%
   \begin{tcard}{nevercard}%
     \cardtext{\csvspec}%
 	\type{\csvtype}%
 \end{tcard}
-}
-{}
-}\end{document} %не добавляй пробелов внутри цикла и после него
+}{}}\end{document} %не добавляй пробелов внутри цикла и после него
