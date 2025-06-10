@@ -21,7 +21,7 @@
 {cards}% database label
 {\csvtype=type,\csvcardtext=cardtext,\csvspec=spec}
 {
- \ifthenelse{\not\equal{\csvspec}{SKIP}}{
+ \ifthenelse{\not\equal{\csvspec}{SKIP} \AND \not\equal{\csvspec}{}}{
   \begin{tcard}{nevercard}%
     \cardtext{\csvspec}%
 	\type{\csvtype}%
