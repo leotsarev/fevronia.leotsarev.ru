@@ -20,7 +20,11 @@
 \DTLforeach*
 {cards}% database label
 {\csvtype=type,\csvcardtext=cardtext,\csvspec=spec}
-{\ifthenelse{\not\equal{\csvspec}{SKIP} \AND \not\equal{\csvspec}{}\AND \not\equal{\csvspec}{EVENT}{%
+\ifthenelse{
+  \not\equal{\csvspec}{SKIP} 
+  \AND \isempty{\csvspec} = \false 
+  \AND \not\equal{\csvspec}{EVENT}
+}{
   \begin{tcard}{nevercard}%
     \cardtext{\csvspec}%
 	\type{\csvtype}%
