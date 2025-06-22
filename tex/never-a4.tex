@@ -20,6 +20,7 @@
 \DTLforeach*
 {cards}% database label
 {\csvtype=type,\csvcardtext=cardtext,\csvspec=spec}
+{%
 \ifthenelse{
   \not\equal{\csvspec}{SKIP} 
   \AND \isempty{\csvspec} = \false 
