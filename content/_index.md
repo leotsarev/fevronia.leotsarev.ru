@@ -27,8 +27,8 @@ title="Возбуждает ли Февронию"
 1. Смешать их все вместе.
 1. Для опытных игроков в настольные игры: сделайте две колоды, в каждой из которых ¼ ХАРД + ¾ ЛАЙТ, ¼ ЛАЙТ + ¾ ХАРД и положите первую на вторую.
 
-<img src="pdf-download-icon.svg" width=13 height=13 style="margin-right:0.2em">[Скачать карточки](fevronia-cards.pdf) (удобнее для печати дома) <br/> 
-<img src="pdf-download-icon.svg" width=13 height=13 style="margin-right:0.2em">[Скачать карточки](fevronia-separate-cards.pdf) (каждая карточка на отдельной странице, может быть удобнее типографии)
+<img src="pdf-download-icon.svg" width=13 height=13 style="margin-right:0.2em">[Скачать карточки](fevronia-a4-cards.pdf) (удобнее для печати дома) <br/> 
+<img src="pdf-download-icon.svg" width=13 height=13 style="margin-right:0.2em">[Скачать карточки](fevronia-sep-cards.pdf) (каждая карточка на отдельной странице, может быть удобнее типографии)
 
 
 
@@ -61,7 +61,10 @@ title="Возбуждает ли Февронию"
 
 ### Я никогда не
 
-Не смотря на то, что эти карточки так не задумывались, ими можно играть в я никогда не (про действия, а не фантазии). Осторожно, в лайте много такого, с чего можно всем напиться, а с харда можно остаться трезвым, так что перемешайте все карточки друг с другом.
+На основе этого же списка сделаны карточки «Я никогда не»:
+
+<img src="pdf-download-icon.svg" width=13 height=13 style="margin-right:0.2em">[Скачать карточки](never-a4-cards.pdf) (удобнее для печати дома) <br/> 
+<img src="pdf-download-icon.svg" width=13 height=13 style="margin-right:0.2em">[Скачать карточки](never-sep-cards.pdf) (каждая карточка на отдельной странице, может быть удобнее типографии)
 
 ### Credits
 

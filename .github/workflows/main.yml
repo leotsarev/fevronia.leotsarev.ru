@@ -37,14 +37,16 @@ jobs:
               main.tex
               sepcards.tex
               never-a4.tex
+              never-sep.tex
             working_directory: tex
             latexmk_use_xelatex: true
             texlive_version: 2024
         - name: Move files
           run: |
-            sudo cp tex/main.pdf $GITHUB_WORKSPACE/public/fevronia-cards.pdf
-            sudo cp tex/sepcards.pdf $GITHUB_WORKSPACE/public/fevronia-separate-cards.pdf
+            sudo cp tex/main.pdf $GITHUB_WORKSPACE/public/fevronia-a4-cards.pdf
+            sudo cp tex/sepcards.pdf $GITHUB_WORKSPACE/public/fevronia-sep-cards.pdf
             sudo cp tex/never-a4.pdf $GITHUB_WORKSPACE/public/never-a4-cards.pdf
+            sudo cp tex/never-sep.pdf $GITHUB_WORKSPACE/public/never-sep-cards.pdf
         - name: Upload artefact
           uses: actions/upload-pages-artifact@v3.0.1
           with:
