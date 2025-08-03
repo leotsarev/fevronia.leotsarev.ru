@@ -94,6 +94,6 @@ title="Возбуждает ли Февронию"
 
 Автор игры: {{ telegram(user="leotsarev") }} (<https://leotsarev.ru>) с помощью #Атаны.
 <br />
-Идеи карточек, фидбек, бета-тестинг: #Айка, Аронов, Крошка Ру, Оля (miolet), #Шико. 
+Идеи карточек, фидбек, бета-тестирование: #Айка, Аронов, Крошка Ру, Оля (miolet), #Шико. 
 <br />
 Исходники на <a href="https://github.com/leotsarev/fevronia.leotsarev.ru"><img src="github-mark.svg" width=13 height=13 style="margin-right:0.2em">Github</a>.
