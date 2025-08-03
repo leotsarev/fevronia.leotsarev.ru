@@ -40,7 +40,7 @@ jobs:
               never-sep.tex
             working_directory: tex
             latexmk_use_xelatex: true
-            texlive_version: 2024
+            texlive_version: 2025
         - name: Move files
           run: |
             sudo cp tex/main.pdf $GITHUB_WORKSPACE/public/fevronia-a4-cards.pdf
