@@ -25,11 +25,9 @@
 \DTLforeach*
 {cards}% database label
 {\csvtype=type,\csvcardtext=cardtext,\csvspec=spec}
-{
- \ifthenelse{\not\equal{\csvcardtext}{SKIP}}{
-  \ifthenelse{\equal{\csvspec}{EVENT}}
+{\ifthenelse{\not\equal{\csvcardtext}{SKIP}}{\ifthenelse{\equal{\csvspec}{EVENT}}
   {\def\csvdirection{EVENT}}%это событие
-  {\def\csvdirection{ARROW}}
+  {\def\csvdirection{ARROW}}%
   \begin{tcard}{fev}%
     \cardtext{\csvcardtext}%
 	\type{\csvtype}%
