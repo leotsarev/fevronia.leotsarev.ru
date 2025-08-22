@@ -48,7 +48,7 @@ jobs:
             sudo cp tex/never-a4.pdf $GITHUB_WORKSPACE/public/never-a4-cards.pdf
             sudo cp tex/never-sep.pdf $GITHUB_WORKSPACE/public/never-sep-cards.pdf
         - name: Upload artefact
-          uses: actions/upload-pages-artifact@v3.0.1
+          uses: actions/upload-pages-artifact@v4.0.0
           with:
             path: public/
 
